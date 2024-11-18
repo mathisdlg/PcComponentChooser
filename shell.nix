@@ -4,9 +4,12 @@ let
         pip
         django
         django-bootstrap5
+        django-debug-toolbar
+        mysqlclient
     ];
 in pkgs.mkShellNoCC {
     packages = with pkgs;[
+        mysql
         python312
     ] ++ pythonModules;
 
@@ -17,4 +20,9 @@ in pkgs.mkShellNoCC {
     LC_MONETARY = "C";
     LC_NUMERIC = "C";
     LC_TIME = "C";
+
+    shellHook = ''
+        alias migrate='python manage.py makemigrations && python manage.py migrate'
+        python manage.py runserver
+    '';
 }
