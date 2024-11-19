@@ -23,6 +23,7 @@ in pkgs.mkShellNoCC {
 
     shellHook = ''
         alias migrate='python manage.py makemigrations && python manage.py migrate'
+        alias server='python manage.py runserver'
         python manage.py runserver
     '';
 }
