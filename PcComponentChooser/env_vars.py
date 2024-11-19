@@ -1,5 +1,0 @@
-DB_NAME="PcComponentChooser"
-DB_USER="root"
-DB_PASSWORD="root"
-DB_HOST="localhost"
-DB_PORT="129129"
