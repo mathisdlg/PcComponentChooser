@@ -19,6 +19,12 @@ from django.urls import include, path
 import debug_toolbar
 
 urlpatterns = [
+    # Admin
     path('admin/', admin.site.urls),
-    path('', include('PcComponentChooserApp.urls'))
+
+    # Account
+    path("accounts/", include("django.contrib.auth.urls")),
+
+    # Main app
+    path('', include('PcComponentChooserApp.urls')),
 ] + [path('__debug__/', include(debug_toolbar.urls))]

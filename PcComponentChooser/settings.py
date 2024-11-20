@@ -88,7 +88,6 @@ DATABASES = {
         'USER': env_vars.DB_USER,
         'PASSWORD': env_vars.DB_PASSWORD,
         'HOST': env_vars.DB_HOST,
-        'PORT': env_vars.DB_PORT,
     }
 }
 
@@ -129,7 +128,15 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [
+    BASE_DIR / "PcComponentChooserApp/templates/static/styles/",
+]
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Authentication
+LOGIN_REDIRECT_URL = "/"

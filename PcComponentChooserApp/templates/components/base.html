@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pc component chooser</title>
+
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'navbar.css' %}">
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+
+        {% load django_bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+
+        {% block extra_head %}{% endblock %}
+    </head>
+
+    <body>
+        {% include 'components/navbar.html' %}
+        {% block content %}{% endblock %}
+    </body>
+</html>

@@ -1,6 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, reverse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth import logout
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the main app index.")
+def home(request):
+    return render(request, 'home.html')
+
+
+def wip(request):
+    return render(request, 'wip.html')
