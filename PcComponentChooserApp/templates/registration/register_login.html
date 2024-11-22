@@ -1,0 +1,17 @@
+{% extends 'components/base.html' %}
+
+{% block content %}
+
+    <h1 class="text-center">Login/Register</h1>
+
+    <form method="POST" action='{% url "register" %}'>
+        {{form_register.as_p}}
+        {% csrf_token %}
+        <input value="Register" type="submit" name="register">
+    </form>
+    <form method="POST" action='{% url "login" %}'>
+        {{form_login.as_p}}
+        {% csrf_token %}
+        <input value="Login" type="submit" name="login">
+    </form>
+{% endblock %}
