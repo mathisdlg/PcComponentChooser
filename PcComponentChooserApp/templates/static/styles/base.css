@@ -1,3 +1,11 @@
 .container {
     padding-top: 30px;
 }
+
+.notification {
+    margin: auto;
+    width: 20%;
+    position: fixed;
+    right: 0;
+    margin-right: 10px;
+}
