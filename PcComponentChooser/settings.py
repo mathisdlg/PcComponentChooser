@@ -130,6 +130,8 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "PcComponentChooserApp/templates/static/styles/",
+    BASE_DIR / "PcComponentChooserApp/templates/static/scripts/",
+    BASE_DIR / "PcComponentChooserApp/templates/static/images/",
 ]
 
 # Default primary key field type
@@ -139,4 +141,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Authentication
-LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/logout"
