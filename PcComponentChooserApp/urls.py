@@ -1,9 +1,14 @@
-from django.urls import path
+from django.urls import path, re_path
 
 from . import views
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("register/<str:next_page>", views.register_login_page, name="register"),
+    path("register", views.register_login_page, name="register"),
+    path("login/<str:next_page>", views.register_login_page, name="login"),
+    path("login", views.register_login_page, name="login"),
+    path("logout", views.logout_view, name="logout"),
 
     # WIP path
     path("wip", views.wip, name="wip"),
@@ -19,5 +24,5 @@ urlpatterns = [
     path("monitor", views.wip, name="monitor"),
     path("peripherals", views.wip, name="peripherals"),
     path("profile", views.wip, name="profile"),
-
+    path("builder", views.wip, name="builder"),
 ]
