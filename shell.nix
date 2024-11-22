@@ -9,7 +9,6 @@ let
     ];
 in pkgs.mkShellNoCC {
     packages = with pkgs;[
-        mysql
         python312
     ] ++ pythonModules;
 
