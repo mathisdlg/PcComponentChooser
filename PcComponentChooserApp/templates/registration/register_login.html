@@ -1,8 +1,26 @@
 {% extends 'components/base.html' %}
 
+{% block extra_head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'toggle_button.css' %}">
+{% endblock %}
+
 {% block content %}
 
     <h1 class="text-center">Login/Register</h1>
+
+    <div class="slider-div">
+        <p>
+            Login
+        </p>
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        <p>
+            Register
+        </p>
+    </div>
 
     <form method="POST" action='{% url "register" %}'>
         {{form_register.as_p}}
