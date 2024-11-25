@@ -9,7 +9,7 @@ import datetime
 
 
 def register_login_page(request):
-    if request.method!="POST":
+    if request.method=="POST":
         next_page = request.GET.get('next')
         if "register" in request.POST:
             form_register = UserCreationForm(request.POST, auto_id="register_%s")
