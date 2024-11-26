@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 import datetime
 
 
-def register_login_page(request):
+def register_login_page(request, clicked="login"):
     if request.method=="POST":
         next_page = request.GET.get('next')
         if "register" in request.POST:
@@ -42,6 +42,7 @@ def register_login_page(request):
     context={
         "form_register":form_register,
         "form_login":form_login,
+        "clicked":clicked,
     }
     return render(request, "registration/register_login.html", context)
 
