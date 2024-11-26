@@ -19,7 +19,6 @@ def register_login_page(request):
                 login(request, User.objects.get(username=username))
                 messages.add_message(request, messages.SUCCESS, f'Account created for {username}.')
                 if next_page == None:
-                    print("No next page")
                     return redirect(reverse('home'))
                 return redirect(reverse(next_page))
             else:
@@ -33,7 +32,6 @@ def register_login_page(request):
                 login(request, user)
                 messages.add_message(request, messages.SUCCESS, 'You have been logged in.')
                 if next_page == None:
-                    print("No next page")
                     return redirect(reverse('home'))
                 return redirect(reverse(next_page))
             else:
