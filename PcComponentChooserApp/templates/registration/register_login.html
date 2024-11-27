@@ -14,7 +14,11 @@
             Login
         </p>
         <label class="switch">
-            <input type="checkbox">
+            {% if clicked == 'login' %}
+                <input type="checkbox">
+            {% else %}
+                <input type="checkbox" checked>
+            {% endif %}
             <span class="slider round"></span>
         </label>
         <p>

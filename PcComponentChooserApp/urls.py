@@ -4,10 +4,10 @@ from . import views
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("register/<str:next_page>", views.register_login_page, name="register"),
-    path("register", views.register_login_page, name="register"),
-    path("login/<str:next_page>", views.register_login_page, name="login"),
-    path("login", views.register_login_page, name="login"),
+    path("register/<str:next_page>", views.register_login_page, name="register", kwargs={"clicked": "register"}),
+    path("register", views.register_login_page, name="register", kwargs={"clicked": "register"}),
+    path("login/<str:next_page>", views.register_login_page, name="login", kwargs={"clicked": "login"}),
+    path("login", views.register_login_page, name="login", kwargs={"clicked": "login"}),
     path("logout", views.logout_view, name="logout"),
 
     # WIP path
